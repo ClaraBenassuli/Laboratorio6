@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mi Página</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    h1 {
+      font-size: 48px;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 20px;
+    }
+    .section {
+      display: none;
+    }
+    .active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a onclick="showSection('pagina1')">pagina 1</a>
+    <a onclick="showSection('pagina2')">pagina 2</a>
+    <a onclick="showSection('pagina3')">pagina 3</a>
+  </nav>
+
+  <div id="pagina1" class="section active">
+    <h1>¡Bienvenido a mi página!</h1>
+    <img src="mike.jpeg" alt="Imagen de ejemplo">
+  </div>
+
+  <div id="pagina2" class="section">
+    <h1>Bienvenido a la página 2</h1>
+  </div>
+
+  <div id="pagina3" class="section">
+    <h1>Adiós</h1>
+  </div>
+
+  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => section.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
